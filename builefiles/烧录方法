@@ -1,1 +1,13 @@
+esptool命令：
+esptool.py --chip esp32 --port COM3 --baud 921600 write_flash --flash_mode dio --flash_freq 80m --flash_size 4MB ^
+0x1000 bootloader_dio_80m.bin ^
+0x8000 FaceDoorEntryESP32Cam.ino.partitions.bin ^
+0xe000 boot_app0.bin ^
+0x10000 FaceDoorEntryESP32Cam.ino.bin
 
+完整烧录地址对照表（ESP32 通用，ESP32CAM 适用）
+文件	烧录偏移地址
+bootloader_dio_80m.bin                              	0x1000
+FaceDoorEntryESP32Cam.ino.partitions.bin	0x8000
+boot_app0.bin	                                                0xe000
+FaceDoorEntryESP32Cam.ino.bin	                0x10000
